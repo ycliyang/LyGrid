@@ -1,0 +1,59 @@
+<html>
+
+	<body>
+		<div id="lygGrid" ></div>
+		<div id="lygGrids" ></div>
+	</body>
+
+	<link rel="stylesheet" type="text/css" href="lygGrid.css">
+	<script type="text/javaScript" src="jquery-1.5.1.min.js"></script>
+	<script type="text/javaScript" src="lygGrid.js"></script>
+
+	<script>
+		var json=[{sex:"男",age:23,name:"李杨"},{sex:"男",age:23,name:"李杨"},{sex:"男",age:23,name:"李杨"},{sex:"男",age:23,name:"李杨"},{sex:"男",age:23,name:"李杨"},{sex:"男",age:23,name:"李杨"}];
+
+		var p=new Ly.LyGrid({
+			name:"p",
+			id:"panel",
+			width:500,
+			height:200,
+			tableWidth:800,
+			div:"lygGrid",
+			json:json,
+			//edit:true,
+			columns:[
+				{header:"名称",dataIndex:"name",edit:true,type:"int"},
+				{header:"性别",dataIndex:"sex",edit:true,type:"String"},
+				{header:"年龄",dataIndex:"age",edit:true,type:"float"}
+			]
+		});
+		p.refresh();
+		var k=new Ly.LyGrid({
+			name:"k",
+			id:"panels",
+			width:500,
+			height:200,
+			tableWidth:800,
+			div:"lygGrids",
+			json:json,
+			edit:true,
+			columns:[
+				{header:"名称",dataIndex:"name",edit:false,type:"int"},
+				{header:"性别",dataIndex:"sex",edit:false,type:"String"},
+				{header:"年龄",dataIndex:"age",edit:true,type:"float"}
+			]
+		});
+		k.refresh();
+
+		function addRow(){
+			var tr=p.addRow();
+			//$("panel").append("<tr><td>1</td><td>1</td><td>1</td></tr>");
+			$("#"+p.id).append(tr);
+		}
+		function test(){
+			alert(p.name+" : "+k.name);
+		}
+	</script>
+	<input type="button" value="新增一行" onclick="addRow()" style="">
+	<input type="button" value="测试" onclick="test();">
+</html>

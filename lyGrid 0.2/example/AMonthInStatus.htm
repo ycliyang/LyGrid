@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>老师考勤信息</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../library/lyGrid/lyGrid.css">
+    <script type="text/javascript" src="../../../library/jquery/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript" src="../../../library/lyGrid/lyGrid.js"></script>
+    <script type="text/javascript" src="../../../library/lyGrid/lyPageToolbar.js"></script>
+    <script type="text/javascript" src="../../../library/lyGrid/lyUtil.js"></script>
+
+
+    <script type="text/javascript" src="AMonthStatus.js"></script>
+    <style type="text/css">
+        .showSchoolDetailForm span{
+            margin-left: 50px
+        }
+        #showTeacherKqForm select{
+            width: 130px;
+        }
+        .userNameFixed{
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div class="showTeacherKq">
+    <form name="showTeacherKqForm" style="display: none">
+        <input type="hidden" name="queryMonth" value="0">
+        <input type="hidden" name="queryYear" value="0">
+        <input type="hidden" name="nowMonth" value="0">
+        <input type="hidden" name="nowYear" value="0">
+        <span>用户类型：</span>
+        <select name="type" value="0">
+            <option value="0">请选择</option>
+            <option value="1">老师</option>
+            <option value="2">学生</option>
+        </select>
+
+        <span>进校状态：</span>
+        <select name="infoStatus" value="0">
+            <option value="0">请选择</option>
+            <option value="1">正常</option>
+            <option value="2">迟到</option>
+            <option value="3">未进行</option>
+            <option value="4">休假</option>
+        </select>
+        <br>
+    </form>
+    <div>
+        当前查看的信息是：<span id="showYear"></span>第<span id="showMonth"></span>月
+
+        <button id="lastMonth">上一月</button>
+        <button id="nowMonth">本月</button>
+        <button id="nextMonth">下一月</button>
+
+        <button id="createTeacherInBtn">统计今天进校记录</button>
+        <button id="createTeacherInWhereDayBtn">统计指定日期进行记录</button>
+        <select id="dayOfMonth" style="width: 100px"></select>
+
+        <button id="queryBtn" style="display: none">查询</button>
+        <button id="queryCancelBtn" style="display: none">重置</button>
+        <button id="syncBtn">保存修改后的记录</button>
+    </div>
+</div>
+
+<div id="showTeacherKqList"></div>
+
+</body>
+</html>

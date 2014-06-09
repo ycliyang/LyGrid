@@ -1,0 +1,71 @@
+.lygGridTable table {
+	table-layout: fixed;
+}
+.lygGridTable td {
+	text-align: center;
+}
+
+.lygGridTableTrA {
+	background: url("image/row-over.gif");
+}
+
+.lygGridTableTrB {
+	background: url("image/row-sel.gif");
+}
+
+.lygGridContextDiv {
+	border-top: 0px;
+	background: #fff;
+	overflow: auto;
+	position: relative;
+}
+
+.lygGridHead {
+	background: url("image/lyggrid.jpg");
+	table-layout: fixed;
+	overflow: auto;
+}
+
+.lygEditCell {
+	background-image: url('image/edit.png');
+    background-repeat: no-repeat;
+}
+
+.lygGridBottom {
+	background: url("image/lyggrid.jpg");
+}
+
+.lygGridPanel table {
+	border: 1px;
+}
+
+.lygGridPanel {
+	border: 1px solid gray;
+	overflow: hidden;
+}
+
+.lygGridHead th {
+	word-wrap: break-word;
+	word-break: break-all;
+	border-collapse: collapse;
+	border: 1px solid #666;
+	table-layout: fixed;
+	word-wrap: break-word;
+    cursor: pointer;
+}
+.lygGridHead th:hover{
+    background: #c9bebe;
+}
+.headSort{
+    color: #ff0000;
+    visibility: hidden;
+}
+
+
+.lygGridPanel table {
+	border-collapse: collapse;
+}
+
+.lygGridTable tr:HOVER {
+	background: #c9bebe;
+}
